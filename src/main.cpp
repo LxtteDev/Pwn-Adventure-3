@@ -27,7 +27,7 @@ void World::Tick(float t) { // Run every frame
     IPlayer* iplayer = w->m_activePlayer.m_object; // Get active player
     Player* player = ((Player*)(iplayer)); // Convert IPlayer to Player
 
-    // Sprint/Speed hack [Left Control]
-    if (isKeyPressed(0xffe3)) { player->m_walkingSpeed = 20000; }
-    else                      { player->m_walkingSpeed = 200;   }
+    // Speed/Jump hack [Left Control]
+    if (isKeyPressed(0xffe3)) { player->m_walkingSpeed = 20000; player->m_jumpSpeed = 4200; }
+    else                      { player->m_walkingSpeed = 200;   player->m_jumpSpeed = 420;  }
 }
